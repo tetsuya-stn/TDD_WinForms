@@ -12,5 +12,17 @@ namespace TDD.UI
 		{
 			return a + b;
 		}
+
+		public static int Ave(List<int> list)
+		{
+			int values = 0;
+			
+			foreach (var val in list)
+			{
+				values += val;
+			}
+
+			return values / list.Count;
+		}
 	}
 }
