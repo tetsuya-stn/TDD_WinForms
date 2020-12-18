@@ -9,12 +9,15 @@ namespace TDD.UI
 {
 	public class Form1VIewModel: ViewModelBase
 	{
-		//private System.Windows.Forms.Button button1;
-
+		private IDBAccess _db;
 		private string _textBox1Text = string.Empty;
 		private string _textBox2Text = string.Empty;
 		private string _labelResultText = string.Empty;
 
+		public Form1VIewModel(IDBAccess db)
+		{
+			_db = db;
+		}
 
 		public string textBox1Text
 		{
@@ -22,13 +25,6 @@ namespace TDD.UI
 			set
 			{
 				SetProperty<string>(ref _textBox1Text, value);
-				//if (_textBox1Text == value)
-				//{
-				//	return;
-				//}
-				
-				//_textBox1Text = value;
-				//OnPropertyChanged("textBox1Text");
 			}
 		}
 
@@ -38,13 +34,6 @@ namespace TDD.UI
 			set
 			{
 				SetProperty<string>(ref _textBox2Text, value);
-				//if (_textBox2Text == value)
-				//{
-				//	return;
-				//}
-
-				//_textBox2Text = value;
-				//OnPropertyChanged("textBox2Text");
 			}
 		}
 
@@ -54,32 +43,16 @@ namespace TDD.UI
 			set
 			{
 				SetProperty<string>(ref _labelResultText, value);
-				//if (_labelResultText == value)
-				//{
-				//	return;
-				//}
-
-				//_labelResultText = value;
-				//OnPropertyChanged("labelResultText");
 			}
 		}
-
-		//public event PropertyChangedEventHandler PropertyChanged;
-
-		//public void OnPropertyChanged(string propertyName)
-		//{
-		//	if (PropertyChanged != null)
-		//	{
-		//		PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		//	}
-		//}
 
 		public void CalculationAction()
 		{
 			int a = int.Parse(textBox1Text);
 			int b = int.Parse(textBox2Text);
+			int dbValue = _db.GetDBValue();
 
-			labelResultText = Calculation.Sum(a, b).ToString();
+			labelResultText = (Calculation.Sum(a, b) + dbValue).ToString();
 		}
 	}
 }
