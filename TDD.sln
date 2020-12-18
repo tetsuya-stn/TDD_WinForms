@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD.UI", "TDD.UI\TDD.UI.csproj", "{4576CB88-336F-4D84-81B8-19CAD7B1618D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD.Test", "TDD.Test\TDD.Test.csproj", "{259CBBE7-D101-49BB-8DA5-022CBD93718F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDTest", "TDD.Test\TDDTest.csproj", "{259CBBE7-D101-49BB-8DA5-022CBD93718F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
